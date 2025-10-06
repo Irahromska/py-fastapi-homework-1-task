@@ -51,9 +51,9 @@ async def get_movies(
         next_page=(
             str(request.url.replace_query_params(page=page + 1, per_page=per_page))
             if page < total_pages else None
-        )
-    total_pages = total_pages,
-    total_items = total_items,
+        ),
+        total_pages=total_pages,
+        total_items=total_items,
     )
 
     @router.get(
